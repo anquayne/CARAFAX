@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator_layout"
+        >
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:id="@+id/vehicle_image_view"
+                android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:id="@+id/vehicle_info_text_view"
+                android:text="test"
+                />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vehicle_price_text_view"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:text="$ 1,7234 | 39.1k mi"
+                />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vehicle_location_text_view"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:text="Highland Park, IL"
+                />
+
+        <View style="@style/HorizontalDivider"
+              android:layout_marginTop="8dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginEnd="8dp"
+                />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="@color/colorAccent"
+                android:text="Call Dealer"
+                android:id="@+id/call_dealer_button"
+                />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

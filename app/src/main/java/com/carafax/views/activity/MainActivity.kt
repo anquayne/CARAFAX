@@ -1,5 +1,6 @@
 package com.carafax.views.activity
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -44,15 +45,6 @@ class MainActivity : BaseActivity() , MainActivityView {
     @Inject
     lateinit var presenter : MainActivityPresenter
 
-    companion object {
-        /**
-         * Method that returns an Intent to load this Activity
-         */
-        fun getCallingIntent(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -81,8 +73,8 @@ class MainActivity : BaseActivity() , MainActivityView {
                 presenter.callVehicleDealer(dealerNumber)
             }
 
-            override fun onVehicleSelected(userModel: VehicleListModel) {
-
+            override fun onVehicleSelected(vehicleListModel: VehicleListModel) {
+                navigator.navigateToVehicleDetailsActivity(this@MainActivity,vehicleListModel)
             }
         }
     }
@@ -124,6 +116,7 @@ class MainActivity : BaseActivity() , MainActivityView {
     }
 
 
+    @SuppressLint("MissingPermission")
     override fun callDealer(dealerNumber: String) {
         val callIntent = Intent(Intent.ACTION_CALL)
         callIntent.data = Uri.parse("tel:$dealerNumber")

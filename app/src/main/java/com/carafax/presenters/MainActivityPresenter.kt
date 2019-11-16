@@ -17,7 +17,7 @@ import javax.inject.Named
 class MainActivityPresenter @Inject constructor(@Named(GetVehicleListData.NAME) val vehicleUseCase: UseCase, val vehicleListModelMapper : VehicleListModelMapper){
 
     var view : MainActivityView? = null
-    var dealerNumber : String? = null
+    private var dealerNumber : String? = null
 
     /**
      * Method to get things started in the presenter

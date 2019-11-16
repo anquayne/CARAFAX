@@ -2,6 +2,7 @@ package com.carafax.navigation
 
 import android.content.Context
 import com.carafax.models.VehicleListModel
+import com.carafax.views.activity.VehicleDetailsActivity
 import javax.inject.Inject
 
 /**
@@ -9,10 +10,9 @@ import javax.inject.Inject
  */
 class Navigator @Inject constructor(){
 
-    fun navigateToMapActivity(context : Context, user1 : VehicleListModel, user2 : VehicleListModel){
-//        val intentToLaunch = MapsActivity.getCallingIntent(context)
-//        intentToLaunch.putExtra("user1",user1)
-//        intentToLaunch.putExtra("user2",user2)
-//        context.startActivity(intentToLaunch)
+    fun navigateToVehicleDetailsActivity(context : Context, vehicleListModel: VehicleListModel ){
+        val intentToLaunch = VehicleDetailsActivity.getCallingIntent(context)
+        intentToLaunch.putExtra("vehicleModel",vehicleListModel)
+        context.startActivity(intentToLaunch)
     }
 }

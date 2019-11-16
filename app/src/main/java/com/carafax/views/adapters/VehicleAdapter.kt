@@ -25,7 +25,7 @@ class VehicleAdapter(private val context: Context) : RecyclerView.Adapter<Vehicl
     var onVehicleClickListener : OnVehicleClickListener? = null
 
     interface OnVehicleClickListener{
-       fun onVehicleSelected(userModel: VehicleListModel)
+       fun onVehicleSelected(vehicleListModel: VehicleListModel)
        fun onCallDealer(dealerNumber : String)
     }
 
@@ -50,6 +50,8 @@ class VehicleAdapter(private val context: Context) : RecyclerView.Adapter<Vehicl
                 it1
             )
         } }
+
+        holder.itemView.setOnClickListener{ onVehicleClickListener?.onVehicleSelected(vehicleModel) }
     }
 
     inner class UserAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
