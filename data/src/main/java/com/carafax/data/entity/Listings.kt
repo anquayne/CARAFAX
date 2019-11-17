@@ -57,7 +57,7 @@ data class Listings(
     @SerializedName("isEnriched")
     val isEnriched: Boolean,
     @SerializedName("listPrice")
-    val listPrice: Int,
+    val listPrice: Double,
     @SerializedName("listingStatus")
     val listingStatus: String,
     @SerializedName("make")

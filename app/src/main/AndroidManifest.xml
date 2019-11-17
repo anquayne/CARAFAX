@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.activity.VehicleDetailsActivity"/>
+        <activity android:name=".views.activity.VehicleDetailsActivity" android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 

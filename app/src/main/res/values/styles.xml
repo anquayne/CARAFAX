@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Base application theme. No Action Bar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#AA000000</item>
+    </style>
     <!-- Horizontal line divider -->
     <style name="HorizontalDivider">
         <item name="android:layout_width">match_parent</item>

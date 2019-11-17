@@ -14,6 +14,8 @@ import butterknife.ButterKnife
 import com.carafax.R
 import com.carafax.models.VehicleListModel
 import com.squareup.picasso.Picasso
+import java.text.NumberFormat
+import java.util.*
 import kotlin.collections.ArrayList
 
 /**
@@ -42,8 +44,10 @@ class VehicleAdapter(private val context: Context) : RecyclerView.Adapter<Vehicl
         val vehicleModel : VehicleListModel = vehicleList[position]
 
         //use picasso to download image
-        Log.e("photo_url","_"+vehicleModel.vehiclePhotoUrl)
         Picasso.with(context).load(vehicleModel.vehiclePhotoUrl).fit().into(holder.vehicleImageView)
+        holder.vehicleInfoTextView.text=vehicleModel.vehicleName
+        holder.vehicleLoctionTextView.text=vehicleModel.vehicleLocation
+        holder.vehiclePriceTextView.text="$ "+ vehicleModel.vehiclePrice?.toBigDecimal()+" | "+ vehicleModel.vehicleMileage
 
         holder.callDealerButton.setOnClickListener { vehicleModel.vehicleCarDealerNumber?.let { it1 ->
             onVehicleClickListener?.onCallDealer(

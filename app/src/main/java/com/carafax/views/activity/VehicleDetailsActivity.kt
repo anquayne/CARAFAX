@@ -41,6 +41,27 @@ class VehicleDetailsActivity : BaseActivity(), VehicleDetailsView {
     @BindView(R.id.vehicle_location_text_view)
     lateinit var vehicleLoctionTextView : TextView
 
+    @BindView(R.id.vehicle_exterior_text_view)
+    lateinit var vehicleExteriorTextView : TextView
+
+    @BindView(R.id.vehicle_interior_text_view)
+    lateinit var vehicleInteriorTextView : TextView
+
+    @BindView(R.id.vehicle_drive_type_text_view)
+    lateinit var vehicleDriveTypeTextView : TextView
+
+    @BindView(R.id.vehicle_transmission_text_view)
+    lateinit var vehicleTransmissionTextView : TextView
+
+    @BindView(R.id.vehicle_body_style_text_view)
+    lateinit var vehicleBodyStyleTextView : TextView
+
+    @BindView(R.id.vehicle_engine_text_view)
+    lateinit var vehicleEngineTextView : TextView
+
+    @BindView(R.id.vehicle_fuel_text_view)
+    lateinit var vehicleFuelTextView : TextView
+
     companion object {
         /**
          * Method that returns an Intent to load this Activity
@@ -64,6 +85,16 @@ class VehicleDetailsActivity : BaseActivity(), VehicleDetailsView {
 
     override fun renderVehicleDetails(vehicleListModel: VehicleListModel) {
         Picasso.with(this).load(vehicleListModel.vehiclePhotoUrl).fit().into(vehicleImageView)
+        vehicleInfoTextView.text = vehicleListModel.vehicleName
+        vehicleLoctionTextView.text = vehicleListModel.vehicleLocation
+        vehicleBodyStyleTextView.text = vehicleListModel.vehicleBodyStyle
+        vehicleDriveTypeTextView.text = vehicleListModel.vehicleDriveType
+        vehicleEngineTextView.text = vehicleListModel.vehicleEngine
+        vehicleExteriorTextView.text = vehicleListModel.vehicleExteriorColor
+        vehicleInteriorTextView.text = vehicleListModel.vehicleInteriorColor
+        vehicleFuelTextView.text = vehicleListModel.vehicleFuel
+        vehicleTransmissionTextView.text = vehicleListModel.vehicleTransmission
+        vehiclePriceTextView.text = "$ "+ vehicleListModel.vehiclePrice?.toBigDecimal()+" | "+ vehicleListModel.vehicleMileage
     }
 
     override fun showMessage(message: String) {
